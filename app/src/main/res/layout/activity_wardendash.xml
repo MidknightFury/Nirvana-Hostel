@@ -47,14 +47,15 @@
         app:layout_constraintStart_toStartOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.793"
-        app:srcCompat="@drawable/mess" />
+        app:srcCompat="@drawable/wardenstaff" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/addNotice"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:background="#00FFFFFF"
         android:scaleType="fitCenter"
+        android:onClick="updateNoticeBoard"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -109,7 +110,7 @@
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mess Status"
+        android:text="Staff Status"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

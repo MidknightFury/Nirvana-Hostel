@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/burly"
-    tools:context=".login">
+    tools:context=".activity_login">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -25,14 +25,14 @@
         android:layout_height="237dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773"
+        app:layout_constraintTop_toBottomOf="@+id/submitAttendance"
+        app:layout_constraintVertical_bias="0.145"
         app:srcCompat="@drawable/college" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/submitAttendance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openWardenLoginPage"
@@ -40,9 +40,10 @@
         app:backgroundTint="#70592F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.049" />
 
     <Button
         android:id="@+id/button3"
@@ -55,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.253" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
