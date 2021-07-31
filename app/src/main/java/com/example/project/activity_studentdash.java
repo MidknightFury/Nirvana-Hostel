@@ -73,21 +73,21 @@ public class activity_studentdash extends AppCompatActivity {
     }
 
     public void openStudentStaff(View v){
-        Toast.makeText(this, "Opening Student Profile", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Opening Staff", Toast.LENGTH_SHORT).show();
         Intent intent2 = new Intent(this,
                 activity_studentstaff.class);
         startActivity(intent2);
     }
 
     public void openStudentRaiseRequest(View v){
-        Toast.makeText(this, "Opening Student Profile", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Opening Requests Section", Toast.LENGTH_SHORT).show();
         Intent intent3 = new Intent(this,
                 activity_studentrequest.class);
         startActivity(intent3);
     }
 
     public void openStudentAttendance(View v){
-        Toast.makeText(this, "Opening Student Profile", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Opening Attendance", Toast.LENGTH_SHORT).show();
         Intent intent4 = new Intent(this,
                 activity_studentattendance.class);
         startActivity(intent4);

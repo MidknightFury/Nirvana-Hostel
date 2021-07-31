@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class activity_updatenotice extends AppCompatActivity {
 
      ImageButton imageButton;
      ImageView noticeImageView;
+     Button uploadNoticeButton;
      FirebaseStorage storage;
      Uri imageUri;
 
@@ -40,7 +42,8 @@ public class activity_updatenotice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updatenotice);
 
-        imageButton=findViewById(R.id.uploadNoticeButton);
+        imageButton=findViewById(R.id.imageButton);
+        uploadNoticeButton=findViewById(R.id.uploadNoticeButton);
         noticeImageView=findViewById(R.id.noticeImageView);
         storage=FirebaseStorage.getInstance();
 
@@ -54,7 +57,7 @@ public class activity_updatenotice extends AppCompatActivity {
             }
         });
 
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        uploadNoticeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                upload image on button click
