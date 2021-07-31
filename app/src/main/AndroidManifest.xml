@@ -14,12 +14,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project">
         <activity
+            android:name=".activity_wardenprofile"
+            android:label="Profile"
+            android:parentActivityName=".activity_wardendash" />
+        <activity
+            android:name=".activity_wardenrequests"
+            android:label="Student&apos;s requests"
+            android:parentActivityName=".activity_wardendash" />
+        <activity
+            android:name=".activity_wardenstaff"
+            android:label="Staff status"
+            android:parentActivityName=".activity_wardendash" />
+        <activity
+            android:name=".activity_studentattendance"
+            android:label="Attendance"
+            android:parentActivityName=".activity_studentdash" />
+        <activity
+            android:name=".activity_studentrequest"
+            android:label="Raise request"
+            android:parentActivityName=".activity_studentdash" />
+        <activity
             android:name=".activity_studentstaff"
             android:label="Staff"
             android:parentActivityName=".activity_studentdash" />
-        <activity android:name=".activity_wardenattendance"
+        <activity
+            android:name=".activity_wardenattendance"
             android:label="Take Attendance"
-            android:parentActivityName=".activity_wardendash"/>
+            android:parentActivityName=".activity_wardendash" />
         <activity
             android:name=".activity_studentprofile"
             android:label="Profile"

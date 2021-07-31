@@ -19,12 +19,8 @@ public class activity_wardendash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wardendash);
     }
-    public void updateNoticeBoard(View v){
-        Toast.makeText(this, "Opening Update Notice Board", Toast.LENGTH_SHORT).show();
-        Intent intent1 = new Intent(this,
-                activity_updatenotice.class);
-        startActivity(intent1);
-    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,4 +36,40 @@ public class activity_wardendash extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),activity_login.class));
         finish();
     }
+
+    public void updateNoticeBoard(View v){
+        Toast.makeText(this, "Opening Update Notice Board", Toast.LENGTH_SHORT).show();
+        Intent intent1 = new Intent(this,
+                activity_updatenotice.class);
+        startActivity(intent1);
+    }
+
+    public void takeattendance(View v){
+        Toast.makeText(this, "Opening Attendance", Toast.LENGTH_SHORT).show();
+        Intent intent2 = new Intent(this,
+                activity_wardenattendance.class);
+        startActivity(intent2);
+    }
+
+    public void openWardentaff(View v){
+        Toast.makeText(this, "Opening Staff Status", Toast.LENGTH_SHORT).show();
+        Intent intent3 = new Intent(this,
+                activity_wardenstaff.class);
+        startActivity(intent3);
+    }
+
+    public void openWardenRequests(View v){
+        Toast.makeText(this, "Opening students requests", Toast.LENGTH_SHORT).show();
+        Intent intent4 = new Intent(this,
+                activity_wardenrequests.class);
+        startActivity(intent4);
+    }
+
+    public void openWardenProfile(View v){
+        Toast.makeText(this, "Opening profile", Toast.LENGTH_SHORT).show();
+        Intent intent5 = new Intent(this,
+                activity_wardenprofile.class);
+        startActivity(intent5);
+    }
+
 }

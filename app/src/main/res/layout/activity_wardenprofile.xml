@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/burly"
-    tools:context=".activity_studentprofile">
+    tools:context=".activity_wardenprofile">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,13 +19,13 @@
 
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/profile_image"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/profilephoto"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/wardenprofile"
 
-             />
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -78,4 +78,5 @@
 
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
