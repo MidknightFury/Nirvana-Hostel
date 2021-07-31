@@ -138,7 +138,7 @@
         app:srcCompat="@drawable/yellowbg" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/wardenName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/arkhip"
@@ -146,7 +146,7 @@
         android:shadowDx="3"
         android:shadowDy="3"
         android:shadowRadius="2"
-        android:text="Horny Gowda"
+        android:text="Your Name"
         android:textColor="@color/burly"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
