@@ -7,4 +7,23 @@
     android:background="@color/burly"
     tools:context=".activity_studentrequest">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="36dp"
+        android:contentDescription="submit"
+        android:src="@drawable/add"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="531dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:fabCustomSize="64dp"
+
+        app:backgroundTint="#DD9C52"
+
+
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
