@@ -106,6 +106,8 @@ public class activity_application extends AppCompatActivity {
                                         mFirebaseDatabase.child("Email").setValue(email);
                                         mFirebaseDatabase.child("Phone number").setValue(phone);
                                         mFirebaseDatabase.child("Postal address").setValue(paddress);
+                                        mFirebaseDatabase.child("Postal address").setValue(paddress);
+
 //                                        if (user.isEmailVerified()){
 ////                                            registerBtn.setVisibility(View.INVISIBLE);
 //                                            Toast.makeText(activity_application.this, "User Created Succesfully, please verify your email", Toast.LENGTH_SHORT).show();

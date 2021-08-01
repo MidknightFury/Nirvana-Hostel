@@ -6,7 +6,16 @@
     android:layout_height="match_parent"
     android:background="@color/burly"
     tools:context=".activity_studentrequest">
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
 
+        android:divider="@color/burly"
+
+        android:layout_margin="5dp"
+        android:dividerHeight="0.5dp" />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -20,7 +29,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:fabCustomSize="64dp"
-
+android:onClick="onCLickAdd"
         app:backgroundTint="#DD9C52"
 
 

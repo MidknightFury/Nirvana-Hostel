@@ -12,6 +12,7 @@
         android:label="A1"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:hardwareAccelerated="true"
         android:theme="@style/Theme.Project">
         <activity
             android:name=".activity_wardenprofile"
