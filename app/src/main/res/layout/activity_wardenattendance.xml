@@ -28,6 +28,7 @@
             android:layout_height="100dp"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
+            android:onClick="onCal"
             android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/calendarattendance" />
 
@@ -51,11 +52,12 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-
-            android:layout_height="wrap_content"
+android:id="@+id/attendace"
+            android:layout_height="300dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
+
             android:layout_marginRight="10dp"
 
             />
@@ -67,6 +69,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:text="submit attendance"
+            android:onClick="onSubmit"
             app:backgroundTint="#70592F"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

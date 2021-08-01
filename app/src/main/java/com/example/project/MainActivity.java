@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Opening Login Page", Toast.LENGTH_SHORT).show();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user!=null){
-            if(user.getUid().equals("6chKDM5zOObZHk3x5pY0ORJynTv2")){
+            if(!user.getUid().equals("6chKDM5zOObZHk3x5pY0ORJynTv2")){
                 Intent intent = new Intent(this,
                         activity_wardendash.class);
                 startActivity(intent);

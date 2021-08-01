@@ -3,19 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/drawable/ic_delete.xml" value="0.2712962962962963" />
         <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/activity_application.xml" value="0.20520833333333333" />
         <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
         <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/activity_studentrequest.xml" value="0.20520833333333333" />
         <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/activity_wardenattendance.xml" value="0.26268115942028986" />
         <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/activity_wardenrequests.xml" value="0.20572916666666666" />
+        <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/custom_list.xml" value="0.26268115942028986" />
         <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/customview.xml" value="0.14722222222222223" />
         <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/list_group.xml" value="0.25" />
         <entry key="..\:/Android_Project/AshrProject/a1HostelApp/app/src/main/res/layout/list_item.xml" value="0.22" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
