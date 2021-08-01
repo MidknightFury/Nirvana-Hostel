@@ -72,9 +72,11 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="95dp"
             android:enabled="true"
-            android:text="Update your profile"
+            android:text="Update your photo"
+            android:onClick="handleUpload"
             android:textColor="#FFFFFF"
             app:backgroundTint="#70592F" />
+
 
 
     </LinearLayout>
