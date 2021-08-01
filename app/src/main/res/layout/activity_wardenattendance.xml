@@ -21,12 +21,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/calendarattendance" />
+
+        <EditText
+            android:id="@+id/searchbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="10dp"
+            android:hint="Search Bar"
+            android:selectAllOnFocus="true"
+            android:textColor="#353333"
+            android:textColorHint="#353333"
+            android:textColorLink="#1C1A1A"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
 
             />

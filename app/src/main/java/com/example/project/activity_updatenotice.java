@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -21,6 +22,10 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -33,8 +38,11 @@ public class activity_updatenotice extends AppCompatActivity {
      ImageButton imageButton;
      ImageView noticeImageView;
      Button uploadNoticeButton;
+     FirebaseAuth mAuth;
      FirebaseStorage storage;
      Uri imageUri;
+
+
 
 
     @Override
@@ -45,10 +53,12 @@ public class activity_updatenotice extends AppCompatActivity {
         imageButton=findViewById(R.id.imageButton);
         uploadNoticeButton=findViewById(R.id.uploadNoticeButton);
         noticeImageView=findViewById(R.id.noticeImageView);
+
+        mAuth=FirebaseAuth.getInstance();
         storage=FirebaseStorage.getInstance();
 
         // run the below method on imageView Click
-        noticeImageView.setOnClickListener(new View.OnClickListener() {
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mGetContent.launch("image/*");
@@ -68,10 +78,17 @@ public class activity_updatenotice extends AppCompatActivity {
     }
 
     private void uploadImage() {
+        //progress dialogue
+        ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("Uploading...");
+        dialog.show();
 //        here we need to access the below result code, but we can't
 //        so to solve it we'll take it as global
         if (imageUri !=null){
-            StorageReference reference = storage.getReference().child("images/" + UUID.randomUUID().toString());
+            FirebaseUser user = mAuth.getCurrentUser();
+//            String userID = user.getUid();
+//            DatabaseReference mFirebaseDatabase = FirebaseDatabase.getInstance().getReference("userID").child(userID);
+            StorageReference reference = storage.getReference().child("images/" + mAuth.getCurrentUser().getUid());
 //            we're creating a reference to store the image in the firebase storage
             // it'll be stored inside images folder inside firebase storage
 //            now using the below code, we'll store the file
@@ -80,10 +97,12 @@ public class activity_updatenotice extends AppCompatActivity {
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     if (task.isSuccessful()){
                         // image uploaded succesfully
+                        dialog.dismiss();
                         Toast.makeText(activity_updatenotice.this, "Image uploaded successfully", Toast.LENGTH_SHORT).show();
                     }
                     else {
                         //failed to upload
+                        dialog.dismiss();
                         Toast.makeText(activity_updatenotice.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
