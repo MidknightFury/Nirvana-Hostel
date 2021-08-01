@@ -9,7 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
 
@@ -17,17 +22,24 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     private ArrayList<String> expandableListTitle;
     private HashMap<String, ArrayList<UserInfo>> expandableListDetail;
     private boolean student;
+    private boolean notice;
 
     public CustomExpandableListAdapter(Context context, ArrayList<String> expandableListTitle,
                                        HashMap<String, ArrayList<UserInfo>> expandableListDetail,boolean student) {
-        super();
         this.context = context;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail = expandableListDetail;
         this.student=student;
+        this.notice=false;
     }
 
-
+    public CustomExpandableListAdapter(Context context, ArrayList<String> expandableListTitle, HashMap<String, ArrayList<UserInfo>> expandableListDetail, boolean student, boolean notice) {
+        this.context = context;
+        this.expandableListTitle = expandableListTitle;
+        this.expandableListDetail = expandableListDetail;
+        this.student = student;
+        this.notice = notice;
+    }
 
     @Override
     public Object getChild(int listPosition, int expandedListPosition) {
@@ -45,23 +57,38 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
                              boolean isLastChild, View convertView, ViewGroup parent) {
         final UserInfo expandedListText = (UserInfo) getChild(listPosition, expandedListPosition);
         if (convertView == null) {
-            LayoutInflater layoutInflater = (LayoutInflater) this.context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.list_item, null);
+            if(!this.notice) {
+                LayoutInflater layoutInflater = (LayoutInflater) this.context
+                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = layoutInflater.inflate(R.layout.list_item, null);
+            }
+            else{
+                LayoutInflater layoutInflater = (LayoutInflater) this.context
+                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = layoutInflater.inflate(R.layout.notice_image_view, null);
+            }
         }
-        TextView expandedListTextView = (TextView) convertView
-                .findViewById(R.id.expandedListItem);
-        if(student) {
-            TextView x = (TextView) convertView
-                    .findViewById(R.id.name);
-        expandedListTextView.setVisibility(View.GONE);
-        x.setVisibility(View.GONE);
-        }
-       else
-        expandedListTextView.setText(expandedListText.getName());
+        if(!notice) {
+            TextView expandedListTextView = (TextView) convertView
+                    .findViewById(R.id.expandedListItem);
+            if (student) {
+                TextView x = (TextView) convertView
+                        .findViewById(R.id.name);
+                expandedListTextView.setVisibility(View.GONE);
+                x.setVisibility(View.GONE);
+            } else
+                expandedListTextView.setText(expandedListText.getName());
 
-        TextView expand=(TextView) convertView.findViewById((R.id.expandedListItem2));
-        expand.setText(expandedListText.getCun());
+            TextView expand = (TextView) convertView.findViewById((R.id.expandedListItem2));
+            expand.setText(expandedListText.getCun());
+        }
+        else{
+            ImageView im=(ImageView) convertView.findViewById(R.id.noticeImageView1);
+//            Glide.with(context).load().placeholder(R.mipmap.ic_launcher_round).dontAnimate().into(im);;
+            Picasso.with(context)
+                    .load(expandedListText.getSub()).placeholder(R.mipmap.ic_launcher_round)
+                    .into(im);
+        }
         return convertView;
     }
 

@@ -90,8 +90,6 @@ public class activity_studentrequest extends AppCompatActivity {
                     }
 
                 }
-//                Log.e("TAG", "counter :" + counter);
-//                counter++;
                                 expandableListAdapter.notifyDataSetChanged();
 
             }
@@ -102,52 +100,7 @@ public class activity_studentrequest extends AppCompatActivity {
             }
         });
 
-//        myRef.addChildEventListener(new ChildEventListener() {
-//            int counter = 0;
-//            List<String> childItem;
-//
-//            @Override
-//            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-//
-//                childItem = new ArrayList<>();
-//                UserInfo x=new UserInfo();
-//
-//                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-//                        x.setId((String)ds.getC);
-////
-////                    Log.e("TAG", "childNames :" + childNames);
-//////                    childItem.add(childNames);
-//                }
-//
-////                listDataChild.put(listDataHeader.get(counter), childItem);
-////                counter++;
-//                Log.e("TAG", "counter :" + counter);
-//                counter++;
-////                expandableListDetail.put()
-//
-////                expandableListAdapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+
 
     }
 

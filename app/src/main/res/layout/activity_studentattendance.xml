@@ -23,6 +23,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="#00FFFFFF"
+            android:onClick="onCal1"
+
             android:scaleType="fitCenter"
             android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/studentattendancecalendar" />
@@ -39,6 +41,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:text="Fetch"
+            android:onClick="fetchData"
             app:backgroundTint="#70592F"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +55,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="#00FFFFFF"
+            android:visibility="gone"
             android:scaleType="fitCenter"
             android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/tick" />
@@ -60,6 +64,8 @@
             android:layout_marginTop="30dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:visibility="gone"
+
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
             android:layout_gravity="center_horizontal"

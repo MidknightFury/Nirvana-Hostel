@@ -16,12 +16,14 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +33,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 
 public class activity_updatenotice extends AppCompatActivity {
 
@@ -41,6 +45,7 @@ public class activity_updatenotice extends AppCompatActivity {
      FirebaseAuth mAuth;
      FirebaseStorage storage;
      Uri imageUri;
+     EditText notice;
 
 
 
@@ -53,7 +58,7 @@ public class activity_updatenotice extends AppCompatActivity {
         imageButton=findViewById(R.id.imageButton);
         uploadNoticeButton=findViewById(R.id.uploadNoticeButton);
         noticeImageView=findViewById(R.id.noticeImageView);
-
+        notice=(EditText)findViewById(R.id.noticeTitle);
         mAuth=FirebaseAuth.getInstance();
         storage=FirebaseStorage.getInstance();
 
@@ -88,7 +93,12 @@ public class activity_updatenotice extends AppCompatActivity {
             FirebaseUser user = mAuth.getCurrentUser();
 //            String userID = user.getUid();
 //            DatabaseReference mFirebaseDatabase = FirebaseDatabase.getInstance().getReference("userID").child(userID);
-            StorageReference reference = storage.getReference().child("images/" + mAuth.getCurrentUser().getUid());
+            if(notice.getText().toString().length()<=0){
+                Toast.makeText(this,"Notice Title Cant Be Empty",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+                return;
+            }
+            StorageReference reference = storage.getReference().child("images/" + notice.getText().toString());
 //            we're creating a reference to store the image in the firebase storage
             // it'll be stored inside images folder inside firebase storage
 //            now using the below code, we'll store the file
@@ -97,8 +107,22 @@ public class activity_updatenotice extends AppCompatActivity {
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     if (task.isSuccessful()){
                         // image uploaded succesfully
-                        dialog.dismiss();
-                        Toast.makeText(activity_updatenotice.this, "Image uploaded successfully", Toast.LENGTH_SHORT).show();
+                        DatabaseReference mFirebaseDatabase = FirebaseDatabase.getInstance().getReference("notice");
+
+                         task.getResult().getMetadata().getReference().getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                             @Override
+                             public void onComplete(@NonNull Task<Uri> task) {
+                                 HashMap<String,String >mp=new HashMap<>();
+                                 mp.put("title",notice.getText().toString());
+                                 mp.put("url",task.getResult().toString());
+                                 mFirebaseDatabase.push().setValue(mp);
+                                 dialog.dismiss();
+                                 Toast.makeText(activity_updatenotice.this, "Image uploaded successfully", Toast.LENGTH_SHORT).show();
+                             }
+                         });
+
+
+
                     }
                     else {
                         //failed to upload

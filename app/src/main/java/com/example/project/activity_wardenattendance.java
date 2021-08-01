@@ -38,10 +38,9 @@ public class activity_wardenattendance extends AppCompatActivity {
 FirebaseDatabase database;
     DatabaseReference myRef;
     HashMap<String,UserData>m;
-
+String date;
     AttendanceAdapter adapter;
-private Date d;
-SimpleDateFormat format= new SimpleDateFormat("yyyy-MM-dd");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -161,12 +160,8 @@ SimpleDateFormat format= new SimpleDateFormat("yyyy-MM-dd");
                         public void onDateSet(DatePicker view, int year,
                                               int monthOfYear, int dayOfMonth) {
 
-                            try {
-                                d=format.parse(year+"-"+monthOfYear+"-"+dayOfMonth);
-                            } catch (ParseException e) {
-                                e.printStackTrace();
-                            }
 
+                            date=monthOfYear+"-"+dayOfMonth+"-"+year;
 
                         }
                     }, mYear, mMonth, mDay);
@@ -175,17 +170,18 @@ SimpleDateFormat format= new SimpleDateFormat("yyyy-MM-dd");
 
     }
     public void onSubmit(View v){
-        if(d ==null){
+        if(date ==null){
             Toast.makeText(this,"Please Select a Date",Toast.LENGTH_SHORT).show();
             return;
         }
-        DatabaseReference mFirebaseDatabase = FirebaseDatabase.getInstance().getReference("attendance").child(d.toString());
+        DatabaseReference mFirebaseDatabase = FirebaseDatabase.getInstance().getReference("attendance").child(date);
         Collection<UserData> values = m.values();
 
         // Creating an ArrayList of values
         ArrayList<UserData> listOfValues
                 = new ArrayList<>(values);
         mFirebaseDatabase.setValue(listOfValues);
+        Toast.makeText(this,"Attendance Updated",Toast.LENGTH_SHORT).show();
 
     }
 }

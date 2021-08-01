@@ -14,6 +14,11 @@ public class UserInfo {
         this.cun = cun;
     }
 
+    public UserInfo(String name, String sub) {
+        this.name = name;
+        this.sub = sub;
+    }
+
     public String getName() {
         return name;
     }

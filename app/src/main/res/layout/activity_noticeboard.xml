@@ -7,4 +7,15 @@
     android:background="@color/burly"
     tools:context=".activity_noticeboard">
 
+    <ExpandableListView
+        android:id="@+id/exviewnotice"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+
+        android:divider="@color/burly"
+
+        android:layout_margin="5dp"
+        android:dividerHeight="0.5dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

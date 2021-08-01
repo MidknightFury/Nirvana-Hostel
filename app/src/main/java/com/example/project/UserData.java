@@ -15,6 +15,12 @@ public class UserData {
         this.userID=userID;
     }
 
+    public UserData(String first, String last, String id) {
+        this.first = first;
+        this.last = last;
+        this.id = id;
+    }
+
     public String getUserID() {
         return userID;
     }

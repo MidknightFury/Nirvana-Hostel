@@ -9,20 +9,31 @@
         android:orientation="vertical"
         android:padding="16dp">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/rsub"
+            android:id="@+id/sl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="subject"
+            android:inputType="number"
+            android:hint="SL No."
             android:textAlignment="center"
             android:layout_gravity="center_horizontal"
 
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/rcon"
+            android:id="@+id/sname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="content"
+            android:hint="Name"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Phone No."
+            android:inputType="phone"
             android:textAlignment="center"
             android:layout_gravity="center_horizontal"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
