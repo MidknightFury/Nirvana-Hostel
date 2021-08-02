@@ -301,7 +301,7 @@
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="E-mail id: a_one_hostel@gmail.com"
+        android:text="nirvanahostel@gmail.com"
         android:textAppearance="?attr/textAppearanceBody2"
         android:textColor="#797D7F"
         android:textSize="16sp"

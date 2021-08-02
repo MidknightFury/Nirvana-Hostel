@@ -18,7 +18,7 @@
 
 
         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/profile_image"
+            android:id="@+id/profile_image2"
             android:layout_width="210dp"
             android:layout_height="210dp"
             android:layout_gravity="center_horizontal"
@@ -72,6 +72,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="95dp"
             android:enabled="true"
+            android:onClick="handleUpload1"
             android:text="Update your profile"
             android:textColor="#FFFFFF"
             app:backgroundTint="#70592F" />
