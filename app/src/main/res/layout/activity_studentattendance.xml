@@ -71,7 +71,15 @@
             android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/studentpresent" />
 
-
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="ATTENDANCE STATUS"
+            android:textAlignment="center"
+            android:visibility="visible" />
 
 
     </LinearLayout>
